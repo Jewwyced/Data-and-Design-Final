@@ -3,6 +3,7 @@ import streamlit as st
 from transformers import pipeline
 import pandas as pd
 
+st.set_page_config(page_title="User Behavior Analyzer", page_icon="🔍")
 
 # Creating a color evaluation for the response results
 def color_evaluation(val):
@@ -18,6 +19,8 @@ classifier = load_model()
 
 # create the title and placeholder text on the frontend
 st.title("User Behavior Analyzer")
+st.caption("Analyze whether user comments are positive or negative using AI.")
+st.divider()
 user_input = st.text_area("Enter 5 comments to analyze" ,placeholder = "Place one comment per line...")
 
 # create the button for the frontend and the logic behind it
